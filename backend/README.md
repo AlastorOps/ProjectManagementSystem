@@ -1,78 +1,61 @@
-# Backend Setup
+# Backend
 
-## Project Stack
+Spring Boot REST API for the Task & Project Management System.
 
-* **Backend:** Java 21 + Spring Boot 4.0.8
-* **API:** REST API
-* **Database:** PostgreSQL 18.3
-* **Frontend:** React + Vite
-* **Monitoring:** Prometheus + Grafana
-* **Platform:** GitHub + Docker
-* **Build Tool:** Maven 3.9.16
+## Stack
 
-## Backend Setup Completed
+- Java 21
+- Spring Boot 4.0.8 (Web MVC, Data JPA, Security, Validation)
+- PostgreSQL (driver included; connection not yet configured)
+- Maven 3.9.16
 
-* Created `backend/` project directory.
-* Created `api/` directory.
-* Generated the Spring Boot 4.0.8 Maven project.
-* Added:
+## Getting Started
 
-  * Spring Web MVC
-  * Spring Data JPA
-  * Spring Security
-  * Validation
-  * PostgreSQL Driver
-* Java 21 installed and working.
-* Created the first REST endpoint:
+```bash
+./mvnw spring-boot:run
+```
 
-  * `GET /api/health`
-* Confirmed Spring Boot starts successfully on port `8081` for development testing.
+Runs on `http://localhost:8081` by default (port set during dev testing).
 
-## PostgreSQL
+Run tests:
 
-PostgreSQL is installed and running.
+```bash
+./mvnw test
+```
 
-* Version: **18.3**
-* Local port: **5433**
+## Project Structure
 
-The database has **not been configured for the backend yet** because the Database team has not completed their setup.
+```
+src/main/java/backend/
+  BackendApplication.java   # entry point
+  controller/                # REST controllers
+src/main/resources/
+  application.properties     # config
+src/test/java/backend/       # tests
+```
+
+## API Endpoints
+
+| Method | Path | Description | Status |
+|---|---|---|---|
+| GET | `/api/health` | Health check | Implemented, currently blocked by default Spring Security (returns `401`) |
 
 ## Current Status
 
 ```text
-Backend project setup     ✅
-Spring Boot               ✅
-Java 21                   ✅
-REST API controller       ✅
-Health endpoint           ✅
-PostgreSQL connection     ⏸️ Waiting for Database team
-Security configuration    ⏸️ Next step
+Backend project setup     done
+Spring Boot                done
+Java 21                    done
+REST controller            done
+Health endpoint            done
+Security configuration     pending — SecurityConfig.java needed to permit /api/health
+PostgreSQL connection      pending — waiting on database/ schema
 ```
 
-## Current API Test
+Spring Security is on the classpath but has no custom configuration yet, so all endpoints (including `/api/health`) are locked behind the default generated-password login. The next step is a `SecurityConfig` that permits `/api/health` without authentication and lays the groundwork for real auth.
 
-Endpoint:
+Database connection isn't wired up yet — see [database/README.md](../database/README.md) once the schema lands.
 
-```text
-GET http://localhost:8081/api/health
-```
+## Contributing
 
-Current response:
-
-```text
-401 Unauthorized
-```
-
-This happens because Spring Security currently protects the endpoint.
-
-## Next Step
-
-Create `SecurityConfig.java` to allow:
-
-```text
-/api/health
-```
-
-without authentication.
-
-**Important:** This step has NOT been done yet.
+See the root [README](../README.md) and [Contributing.md](../Contributing.md) for branch naming (`backend/<task>`) and PR workflow.

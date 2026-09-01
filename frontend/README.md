@@ -1,16 +1,56 @@
-# React + Vite
+# Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + Vite UI for the Task & Project Management System — dashboards, task/project views, Kanban board, calendar, team, and reports.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 19 + React Router 7
+- Vite 8
+- Recharts (charts) + lucide-react (icons)
+- ESLint
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev       # starts the dev server with HMR
+```
 
-## Expanding the ESLint configuration
+Other scripts:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm run build      # production build
+npm run preview    # preview the production build locally
+npm run lint        # run ESLint
+```
+
+## Project Structure
+
+```
+src/
+  components/     # shared UI components (StatCard, ProjectCard, TaskDetailPanel, ui/)
+  layout/         # app shell — Sidebar, TopBar, AppLayout, layout context
+  pages/          # routed pages (Dashboard, Tasks, Projects, Kanban, Calendar, Team, Reports)
+  data/           # mock data (placeholder until wired to the backend API)
+  styles/         # global styles and theme tokens
+```
+
+## Routes
+
+| Path | Page |
+|---|---|
+| `/` | Dashboard |
+| `/tasks` | Tasks |
+| `/projects` | Projects |
+| `/kanban` | Kanban |
+| `/calendar` | Calendar |
+| `/team` | Team |
+| `/reports` | Reports |
+
+## Status
+
+Currently built against mock data in `src/data/mockData.js`. Integration with the backend REST API is pending — see the [API README](../api/README.md) and [Backend README](../backend/README.md).
+
+## Contributing
+
+See the root [README](../README.md) and [Contributing.md](../Contributing.md) for branch naming and workflow.
