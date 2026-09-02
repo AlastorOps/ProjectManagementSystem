@@ -5,7 +5,7 @@
   --color-medium-gray: #66676b;
 
   /* Backgrounds */
-  --bg-main: #f5f5f7;
+  --bg-main: #d6d6d6;
   --bg-secondary: #fafafb;
   --bg-card: #ffffff;
 
@@ -23,7 +23,7 @@
   --accent-lavender: #aeb9d2;
   --accent-blue-gray: #dde3f0;
   --accent-purple: #b9b0c8;
-  --hero-bg: #e5eaf3;
+  --hero-bg: #ffffff;
 
   /* Status */
   --status-success: #78a88a;

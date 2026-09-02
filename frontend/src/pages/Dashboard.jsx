@@ -123,7 +123,7 @@ export function Dashboard() {
             </div>
           </section>
 
-          <section className="dash-section">
+          <section className="card dash-section">
             <div className="dash-section__head">
               <h3 className="section-title">Projects</h3>
               <Link to="/projects" className="dash-section__link">View all</Link>

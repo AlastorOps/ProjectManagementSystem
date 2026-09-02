@@ -101,6 +101,10 @@
   color: var(--text-white);
 }
 
+.sidebar__item--active:hover svg {
+  color: var(--text-white);
+}
+
 .sidebar__upgrade {
   margin-top: auto;
   background: var(--color-charcoal);

@@ -1,8 +1,9 @@
 .project-card {
-  padding: 20px 22px;
+  padding: 22px 24px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  box-shadow: 0 10px 28px rgba(17, 17, 17, 0.22);
 }
 
 .project-card__top {
